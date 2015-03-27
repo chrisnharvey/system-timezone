@@ -57,8 +57,8 @@ PHP_FUNCTION(system_timezone)
     MAKE_STD_ZVAL(args[1]);
     ZVAL_LONG(args[1], lt.tm_gmtoff);
 
-    MAKE_STD_ZVAL(args[1]);
-    ZVAL_LONG(args[1], lt.tm_isdst);
+    MAKE_STD_ZVAL(args[2]);
+    ZVAL_LONG(args[2], lt.tm_isdst);
 
     // Setup function name
     zval *fname;
