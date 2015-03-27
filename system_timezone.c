@@ -3,6 +3,8 @@
 #endif
 #include "php.h"
 #include <zend_API.h>
+#include <time.h>
+#define _GNU_SOURCE /* for tm_gmtoff and tm_zone */
  
 #define PHP_SYSTEM_TIMEZONE_VERSION "1.0"
 #define PHP_SYSTEM_TIMEZONE_EXTNAME "system_timezone"
