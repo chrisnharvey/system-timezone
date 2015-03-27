@@ -28,11 +28,11 @@ zend_module_entry system_timezone_module_entry = {
 #endif
     PHP_SYSTEM_TIMEZONE_EXTNAME,
     timezone_functions,
-    NULL, // name of the MINIT function or NULL if not applicable
-    NULL, // name of the MSHUTDOWN function or NULL if not applicable
-    NULL, // name of the RINIT function or NULL if not applicable
-    NULL, // name of the RSHUTDOWN function or NULL if not applicable
-    NULL, // name of the MINFO function or NULL if not applicable
+    NULL, /* name of the MINIT function or NULL if not applicable */
+    NULL, /* name of the MSHUTDOWN function or NULL if not applicable */
+    NULL, /* name of the RINIT function or NULL if not applicable */
+    NULL, /* name of the RSHUTDOWN function or NULL if not applicable */
+    NULL, /* name of the MINFO function or NULL if not applicable */
 #if ZEND_MODULE_API_NO >= 20010901
     PHP_SYSTEM_TIMEZONE_VERSION,
 #endif
@@ -72,7 +72,7 @@ PHP_FUNCTION(system_timezone)
 
     /* Call the timezone_name_from_abbr function */
     if (call_user_function(EG(function_table), NULL, fname, retval, 1, args TSRMLS_CC) == SUCCESS) {
-        // Return value from the timezone_name_from_abbr function
+        /* Return value from the timezone_name_from_abbr function */
         RETURN_ZVAL(retval, 1, 0);
     }
 }
