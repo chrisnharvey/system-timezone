@@ -50,9 +50,15 @@ PHP_FUNCTION(system_timezone)
     localtime_r(&t, &lt);
 
     // Setup args to be passed to timezone_name_from_abbr
-    zval *args[1];
+    zval *args[3];
     MAKE_STD_ZVAL(args[0]);
     ZVAL_STRING(args[0], lt.tm_zone, 1); 
+    
+    MAKE_STD_ZVAL(args[1]);
+    ZVAL_LONG(args[1], lt.tm_gmtoff);
+
+    MAKE_STD_ZVAL(args[1]);
+    ZVAL_LONG(args[1], lt.tm_isdst);
 
     // Setup function name
     zval *fname;
